@@ -1,0 +1,99 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav-content >
+        <mat-sidenav-container fullscreen>
+            
+            <mat-sidenav mode="side" opened> 
+                <mat-toolbar class="bg-white">
+                    <span>Intranet NUMEN</span>
+                </mat-toolbar>
+                <mat-nav-list>
+                    <a 
+                        routerLink="./listado"
+                        mat-list-item>
+                        <!-- <mat-icon mat-list-icon>label</mat-icon> -->
+                        <span>Avisos</span>
+                    </a>
+        
+                    <a 
+                        routerLink="./listado"
+                        mat-list-item>
+                        <!-- <mat-icon mat-list-icon>label</mat-icon> -->
+                        <span>Actividades Asignadas</span>
+                     </a>
+        
+                    <a 
+                        routerLink="./listado"
+                        mat-list-item>
+                        <!-- <mat-icon mat-list-icon>label</mat-icon> -->
+                        <span>Asistencia a estudio</span>
+                    </a>
+        
+                    <a 
+                        routerLink="./listado"
+                        mat-list-item>
+                        <!-- <mat-icon mat-list-icon>label</mat-icon> -->
+                        <span>Agenda de reuniones</span>
+                    </a>
+        
+                    <a 
+                        routerLink="./listado"
+                        mat-list-item>
+                        <!-- <mat-icon mat-list-icon>label</mat-icon> -->
+                        <span>Clientes / Proyectos</span>
+                    </a>
+        
+                    <a 
+                        routerLink="./listado"
+                        mat-list-item>
+                        <!-- <mat-icon mat-list-icon>label</mat-icon> -->
+                        <span>Reportes</span>
+                    </a>
+                </mat-nav-list>
+            </mat-sidenav>
+        
+            
+            
+            <mat-sidenav-content class="bg-princ" >
+                <mat-toolbar class="userToolbar bg-white">
+                    <div class="userButton">
+                        <mat-icon style="font-size: 30px; width: 30px; height: 30px;">account_circle</mat-icon>
+                        <span>{{user.name}}</span>
+                    </div>
+                </mat-toolbar>
+        
+                <div class="main-container">
+                    <div class="actHeader">
+                        <div class="titHeader">Actividades Asignadas</div>
+                        <div class="acumuladosWrapp">
+                            <div class="acumulado">
+                                <div class="tit1">Acumulado Diario</div>
+                                <div class="tit2">{{ fechaActual | date:'d/M/yyyy' }}</div>
+                                <div class="acumuladoDiario">2:12:00</div>
+                            </div>
+            
+                            <div class="acumulado">
+                                <div class="tit1">Acumulado Semanal</div>
+                                <div class="tit2">Semana {{ fechaActual | date:'w' }} - {{ fechaActual | date:'yyyy' }}</div>
+                                <div class="acumuladoSemanal">28:34:00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" class="tabActividades">
+                        <mat-tab label="Semana">
+                            <app-semana></app-semana>
+                        
+                        </mat-tab>
+                        <mat-tab label="Mes">
+                            <app-mes></app-mes>
+                        </mat-tab>
+                    </mat-tab-group>
+                </div>
+                
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+    </mat-sidenav-content>
+    <mat-sidenav #drawer mode="over"  position="end" (closedStart)="onClosed()">
+        <app-capturarActividad ></app-capturarActividad>
+    </mat-sidenav>
+</mat-sidenav-container>
+

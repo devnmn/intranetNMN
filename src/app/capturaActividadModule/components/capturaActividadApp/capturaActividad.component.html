@@ -1,0 +1,43 @@
+<mat-card class="capturarActividad">
+    <mat-card-content class="">
+
+      <div class="header">
+        <div class="uno">
+          <div class="card-title" *ngIf=" estado == 'captura' ">{{ actividad.nombre }}</div>
+          <div class="card-title" *ngIf=" estado == 'editar' ">Editar Actividad</div>
+          <div class="card-title" *ngIf=" estado == 'copiar' ">Copiar Actividad</div>
+          <div class="card-title" *ngIf=" estado == 'crear' ">Crear Actividad</div>
+          <div class="prioridad" *ngIf=" actividad.prioridadAlta == true && estado == 'captura' ">
+            <mat-icon>warning</mat-icon>
+            <div class="label">Prioridad Alta</div>
+          </div>
+        </div>
+        <div class="dos" *ngIf=" estado != 'crear' ">
+          <div class="botonCirc Editar"
+            [ngClass]="{'active': estado === 'editar'}" 
+            (click)="cambiaEstado('editar')">
+            <mat-icon>edit</mat-icon>
+          </div>
+          <div class="botonCirc Duplicar"
+            [ngClass]="{'active': estado === 'copiar'}"
+            (click)="cambiaEstado('copiar')">
+            <mat-icon>content_copy</mat-icon>
+          </div>
+          <div class="botonCirc Salir"
+            [ngClass]="{'active': estado === 'captura'}"
+            (click)="cambiaEstado('captura')">
+            <mat-icon>more_time</mat-icon>
+          </div>
+        </div>
+      </div>
+
+      <app-estado-captura [actividad]="actividad" *ngIf=" estado == 'captura' "></app-estado-captura>
+
+      <app-estado-duplicar [actividad]="actividad" *ngIf=" estado == 'copiar' "></app-estado-duplicar>
+
+      <app-estado-edicion [actividad]="actividad" *ngIf=" estado == 'editar' "></app-estado-edicion>
+
+      <app-estado-crear [actividad]="actividad" *ngIf=" estado == 'crear' "></app-estado-crear>
+    </mat-card-content>
+  </mat-card>
+  

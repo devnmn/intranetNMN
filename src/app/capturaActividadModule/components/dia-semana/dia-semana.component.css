@@ -1,0 +1,57 @@
+.semanaWrapper{
+    display: flex;
+}
+
+.semanaWrapper .diaWrapper{
+    width: calc(100% / 7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1em 0;
+}
+
+.semanaWrapper .diaLabel{
+    font-size: 15px;
+    border-bottom: 2px solid #E2E7EE;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 0.7em;
+    margin-bottom: 1.3em;
+    position: relative;
+}
+
+.semanaWrapper .diaLabel.active::before{
+    position: absolute;
+    height: 4px;
+    background-color: #CECC00;
+    bottom: -3px;
+    right: 0;
+    width: 100%;
+    content: '';
+    border-radius: 4px;
+
+}
+
+.semanaWrapper .actividadesWrapper{
+    width: 100%;
+}
+
+
+.semanaWrapper .btnAgregarAct {
+    opacity: 0%;
+    transition: opacity .3s;
+    background-color: #E2E7EE;
+    color: #354052;
+}
+
+.semanaWrapper .diaWrapper.lunes:hover .btnAgregarAct,
+.semanaWrapper .diaWrapper.martes:hover .btnAgregarAct,
+.semanaWrapper .diaWrapper.miercoles:hover .btnAgregarAct,
+.semanaWrapper .diaWrapper.jueves:hover .btnAgregarAct,
+.semanaWrapper .diaWrapper.viernes:hover .btnAgregarAct,
+.semanaWrapper .diaWrapper.sabado:hover .btnAgregarAct,
+.semanaWrapper .diaWrapper.domingo:hover .btnAgregarAct{
+    opacity: 100%;
+}
+

@@ -1,0 +1,42 @@
+
+
+.actividad{
+    width: 95%;
+    box-sizing: border-box;
+    margin: 0em auto 1em;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    cursor: pointer;
+}
+
+.actividad:hover{
+    background-color: #CECC00;
+    color: #fff;
+    transition: background-color .2s;
+}
+
+.actividad.track{
+    box-shadow: 0px 2px 1px -1px rgb(206 204 0 / 70%), 0px 1px 1px 0px rgb(206 204 0 / 70%), 0px 1px 3px 0px rgb(206 204 0 / 70%);
+}
+
+
+.actividad .logoSec{
+    padding: 10px 0px 10px 10px;
+}
+
+.actividad .logoSec .logoCliente{
+    height: 2.5em;
+    background-color: #d2d9e3;
+    width: 2.5em;
+    border-radius: 100%;
+    margin: auto;
+}
+
+.actividad .actividadLabel{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0 4%;
+
+}

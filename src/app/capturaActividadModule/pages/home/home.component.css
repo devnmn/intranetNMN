@@ -1,0 +1,46 @@
+.actHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.actHeader .titHeader{
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.actHeader .acumuladosWrapp{
+    display: flex;
+}
+
+.actHeader .acumuladosWrapp .acumulado{
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+}
+
+.actHeader .acumuladosWrapp .acumulado:first-child{
+    margin-right: 1em;
+}
+
+.actHeader .acumuladosWrapp .acumulado .tit1{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.actHeader .acumuladosWrapp .acumulado .tit2{
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.actHeader .acumuladosWrapp .acumulado .acumuladoDiario{
+    color: #F35162;
+}
+
+.actHeader .acumuladosWrapp .acumulado .acumuladoDiario,
+.actHeader .acumuladosWrapp .acumulado .acumuladoSemanal{
+    font-size: 23px;
+    font-weight: 600;
+    margin-top: 15px;
+}

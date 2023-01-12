@@ -1,0 +1,88 @@
+
+
+<div class="semanaWrapper">
+    <div class="diaWrapper domingo">
+        <div class="nombre">Domingo</div>
+        <div class="diaLabel" [ngClass]="{'active': diaActual === 0}">{{diasEnSemana[0] | date:'dd'}}</div>
+        <div class="actividadesWrapper">
+            <app-tarjeta-actividad [actividad]="actividad" *ngFor="let actividad of domingo"></app-tarjeta-actividad>
+        </div>
+        <button class="btnAgregarAct" mat-flat-button (click)="crearActividad(0)">
+            <mat-icon>add</mat-icon>
+            Agregar Actividad
+        </button>
+    </div>
+    <div class="diaWrapper lunes">
+        <div class="nombre">Lunes</div>
+        <div class="diaLabel" [ngClass]="{'active': diaActual === 1}">{{diasEnSemana[1] | date:'dd'}}</div>
+        <div class="actividadesWrapper">
+            <app-tarjeta-actividad [actividad]="actividad" *ngFor="let actividad of lunes"></app-tarjeta-actividad>
+        </div>
+        <button class="btnAgregarAct" mat-flat-button (click)="crearActividad(1)">
+            <mat-icon>add</mat-icon>
+            Agregar Actividad
+        </button>
+    </div>
+
+    <div class="diaWrapper martes">
+        <div class="nombre">Martes</div>
+        <div class="diaLabel" [ngClass]="{'active': diaActual === 2}">{{diasEnSemana[2] | date:'dd'}}</div>
+        <div class="actividadesWrapper">
+            <app-tarjeta-actividad [actividad]="actividad" *ngFor="let actividad of martes"></app-tarjeta-actividad>
+        </div>
+        <button class="btnAgregarAct" mat-flat-button (click)="crearActividad(2)">
+            <mat-icon>add</mat-icon>
+            Agregar Actividad
+        </button>
+    </div>
+
+    <div class="diaWrapper miercoles">
+        <div class="nombre">Miércoles</div>
+        <div class="diaLabel" [ngClass]="{'active': diaActual === 3}">{{diasEnSemana[3] | date:'dd'}}</div>
+        <div class="actividadesWrapper">
+            <app-tarjeta-actividad [actividad]="actividad" *ngFor="let actividad of miercoles"></app-tarjeta-actividad>
+        </div>
+        <button class="btnAgregarAct" mat-flat-button (click)="crearActividad(3)">
+            <mat-icon>add</mat-icon>
+            Agregar Actividad
+        </button>
+    </div>
+
+    <div class="diaWrapper jueves">
+        <div class="nombre">Jueves</div>
+        <div class="diaLabel" [ngClass]="{'active': diaActual === 4}">{{diasEnSemana[4] | date:'dd'}}</div>
+        <div class="actividadesWrapper">
+            <app-tarjeta-actividad [actividad]="actividad" *ngFor="let actividad of jueves"></app-tarjeta-actividad>
+        </div>
+        <button class="btnAgregarAct" mat-flat-button (click)="crearActividad(4)">
+            <mat-icon>add</mat-icon>
+            Agregar Actividad
+        </button>
+    </div>
+
+    <div class="diaWrapper viernes">
+        <div class="nombre">Viernes</div>
+        <div class="diaLabel" [ngClass]="{'active': diaActual === 5}">{{diasEnSemana[5] | date:'dd'}}</div>
+        <div class="actividadesWrapper">
+            <app-tarjeta-actividad [actividad]="actividad" *ngFor="let actividad of viernes"></app-tarjeta-actividad>
+        </div>
+        <button class="btnAgregarAct" mat-flat-button (click)="crearActividad(5)">
+            <mat-icon>add</mat-icon>
+            Agregar Actividad
+        </button>
+    </div>
+
+    <div class="diaWrapper sabado">
+        <div class="nombre">Sábado</div>
+        <div class="diaLabel" [ngClass]="{'active': diaActual === 6}">{{diasEnSemana[6] | date:'dd'}}</div>
+        <div class="actividadesWrapper">
+            <app-tarjeta-actividad [actividad]="actividad" *ngFor="let actividad of sabado"></app-tarjeta-actividad>
+        </div>
+        <button class="btnAgregarAct" mat-flat-button (click)="crearActividad(6)">
+            <mat-icon>add</mat-icon>
+            Agregar Actividad
+        </button>
+    </div>
+
+
+</div>

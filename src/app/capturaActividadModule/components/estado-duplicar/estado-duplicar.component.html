@@ -1,0 +1,32 @@
+<div class="secSeparador">
+    <div class="linea"></div>
+    <div class="separadorLabel">Información</div>
+</div>
+
+<div class="infoBlock">
+    <div>Nombre de actividad: {{actividad.nombre}}</div>
+    <div>Cliente: {{actividad.cliente}}</div>
+    <div>Proyecto: {{actividad.proyecto}}</div>
+    <div>Creada por: {{actividad.autor}} </div>
+</div>
+
+<div class="secSeparador">
+    <div class="linea"></div>
+    <div class="separadorLabel">Copiar en:</div>
+</div>
+
+<!-- <div class="input-group">
+    <input class="form-control" type="date" />
+</div> -->
+
+<mat-form-field class="full-width">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <div class="footer">
+    <button mat-raised-button color="primary">Duplicar Actividad</button>
+  </div>

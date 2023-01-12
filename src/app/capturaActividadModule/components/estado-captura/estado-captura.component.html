@@ -1,0 +1,100 @@
+<div class="secSeparador">
+    <div class="linea"></div>
+    <div class="separadorLabel">Información</div>
+</div>
+
+<div class="infoBlock">
+    <div>{{actividad.cliente[0].razon_social}} - {{actividad.proyecto[0].nombre}}</div>
+    <div>Creada por: {{actividad.autor[0].name}} </div>
+    <div>Fecha: {{ actividad.fecha | date:"dd/MM/yy" }} </div>
+</div>
+
+<!-- ------------ separador ------------ -->
+
+<div class="secSeparador">
+    <div class="linea"></div>
+    <div class="separadorLabel">Registro de tiempo</div>
+</div>
+
+
+
+<table class="full-width" cellspacing="1"><tr>
+    <td><mat-form-field appearance="standard">
+      <mat-label>Inicio</mat-label>
+      <input matInput
+      type="text"
+      [value]="tiempoInicio | timeInit">
+    </mat-form-field></td>
+    <td><mat-form-field appearance="standard">
+      <mat-label>Fin</mat-label>
+      <input matInput
+      type="text"
+      [value]="tiempoFinal | timeInit">
+    </mat-form-field></td>
+    <td><mat-form-field appearance="standard">
+      <mat-label>Total</mat-label>
+      <input matInput
+      type="text"
+      [value]="tiempoAcumulado.resHor + ':' + tiempoAcumulado.resMin + ':' + tiempoAcumulado.resSeg">
+    </mat-form-field></td>
+  </tr></table>
+
+<!-- ------------ separador ------------ -->
+
+<div class="secSeparador">
+    <div class="linea"></div>
+    <div class="separadorLabel">Descripción</div>
+  </div>
+
+<div class="input-group">
+
+    <mat-form-field class="full-width" appearance="standard">
+        <mat-label>Descripción</mat-label>
+        <textarea matInput placeholder="Añadir descripción detallada">{{actividad.descripcion}}</textarea>
+      </mat-form-field>
+</div>
+
+<!-- ------------ separador ------------ -->
+
+<div class="secSeparador">
+    <div class="linea"></div>
+    <div class="separadorLabel">Check List</div>
+</div>
+
+
+
+<div *ngIf=" actividad.lista.length != 0" class="listWrapp">
+
+    <mat-selection-list>
+      <mat-list-option *ngFor="let dato of actividad.lista; let i = index" class="form-check" [value]="dato.estatus" [selected]="dato.estatus">
+        {{ dato.contenido }}
+      </mat-list-option>
+    </mat-selection-list>
+
+</div>
+
+
+<form class="agregarCheckWrapp" (ngSubmit)="agregarCheckList()">
+  <mat-form-field class="checkList-1" appearance="standard">
+    <mat-label>Agregar Elemento</mat-label>
+    <input 
+      matInput 
+      [(ngModel)]="nuevo.contenido"
+      name="contenido"
+    >
+  </mat-form-field>
+  
+  <div class="checkList-2">
+    <button mat-icon-button mat-mini-fab type="submit">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  
+</form>
+
+
+<div class="footer">
+  <button mat-raised-button color="warn">Eliminar Actividad</button>
+  <button (click)="startCrono()" mat-raised-button color="accent">{{ buttonLabel }}</button>
+  <button mat-raised-button color="primary">Guardar</button>
+</div>
